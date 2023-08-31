@@ -1,0 +1,20 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "donut-release" ]
+  pull_request:
+    branches: [ "donut-release" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Making
+      run: make -f Android.mk
+
+    
